@@ -7,20 +7,16 @@ properties([
 ])
 node("master")
 {
-  def a = ""
+  def a = "Samplevalue"
     stage("Checkout")
 {
   echo "${a}"
   echo "${Version}"
-  
   echo "${Application}"
   
-    
-}
-    
+ }
     stage("Build")
     {
         echo "Sample build"
     }
-
 }
