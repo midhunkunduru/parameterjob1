@@ -7,7 +7,7 @@ properties([
 ])
 node("master")
 {
-  def a = "somevalue"
+  def a = ""
     stage("Checkout")
 {
   echo "${a}"
