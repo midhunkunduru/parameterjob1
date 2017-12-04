@@ -1,11 +1,26 @@
+properties([
+  parameters([
+    string(name: 'Version', description: 'Possible options: 1 1.1 1.2 1.3', defaultValue: ''),
+    string(name: 'Application', description: 'Possible options: .net java', defaultValue: ''),
+   
+  ])
+])
 node("master")
 {
-stage("Checkout")
+  def a = "somevalue"
+    stage("Checkout")
 {
-  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '52594f0a-847f-44b2-b266-814604dbbdfc', url: 'https://github.com/midhunkunduru/parameterjob1.git']]])
+  echo "${a}"
+  echo "${Version}"
+  
+  echo "${Application}"
+  
+    
+}
+    
+    stage("Build")
+    {
+        echo "Sample build"
+    }
 
-}
-stage("Build")
-{
-}
 }
